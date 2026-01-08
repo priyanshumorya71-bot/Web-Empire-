@@ -1,1 +1,59 @@
+body {
+  margin:0;
+  font-family: Arial;
+  background-size:cover;
+  color:white;
+}
 
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px;
+  background:rgba(0,0,0,0.6);
+}
+
+nav a {
+  margin-left:15px;
+  color:white;
+  text-decoration:none;
+}
+
+main {
+  text-align:center;
+  padding:40px 10px;
+}
+
+input {
+  width:80%;
+  padding:12px;
+  border-radius:8px;
+  border:none;
+}
+
+.result {
+  background:#111;
+  margin:5px auto;
+  padding:8px;
+  width:80%;
+}
+
+.bottom-nav {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:black;
+  display:flex;
+  justify-content:space-around;
+  padding:10px 0;
+}
+
+.bottom-nav a {
+  color:white;
+  text-decoration:none;
+}
+
+.social {
+  text-align:center;
+  padding:20px;
+}
