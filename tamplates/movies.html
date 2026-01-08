@@ -2,85 +2,47 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Web Empire Movies – Free Movies Websites Collection">
-  <meta name="keywords" content="free movies, movie websites, web empire movies">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Movies – Web Empire</title>
-
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
-<body style="background-image:url('/static/images/background.jpg')">
+<body>
 
-  <!-- Header -->
-  <header>
-    <div class="logo">🎬</div>
-    <h1>Web Empire</h1>
-    <nav>
-      <a href="/">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1>🎬 Web Empire Movies</h1>
+</header>
 
-  <!-- Main Content -->
-  <main>
-    <h2>🎥 Free Movies Websites</h2>
-    <p>
-      Yaha par aapko free movies dekhne wali best websites milengi
-    </p>
+<main>
 
-    <!-- Movie Website List -->
-    <div class="result">
-      <a href="https://example.com" target="_blank">
-        🎞 Movie World – Hollywood + Bollywood
-      </a>
-    </div>
-    <div class="result">
-  <a href="https://bollyflix.do/" target="_blank">
-    <img src="https://i.ibb.co/7xy6rbKJ/0288a187c69998449d2e5fac92855cc4-1.jpg"
-         alt="Bollyflix"
-         style="width:100%; border-radius:10px; margin-bottom:8px;">
-    
-    <h3>🎬 Bollyflix</h3>
+  <!-- LOOP START -->
+  {% for movie in movies %}
 
-    <p>
-      Bollyflix बॉलीवुड, साउथ और हिंदी डब्ड मूवीज फ्री में प्रोवाइड करता है।
-    </p>
+  <div class="result">
 
-    <small>
-      ✔ हिंदी मूवीज | ✔ साउथ डब्ड | ✔ फ्री डाउनलोड
-    </small>
-  </a>
-    </div>
+    <a href="{{ movie.link }}" target="_blank">
 
-    <div class="result">
-      <a href="https://example.com" target="_blank">
-        🍿 Cinema Hub – Latest Movies
-      </a>
-    </div>
+      <img src="{{ movie.image }}"
+           alt="{{ movie.name }}"
+           style="width:100%; border-radius:10px;">
 
-    <div class="result">
-      <a href="https://example.com" target="_blank">
-        🎬 South Movies – Hindi Dubbed
-      </a>
-    </div>
+      <h3>{{ movie.name }}</h3>
 
-    <div class="result">
-      <a href="https://example.com" target="_blank">
-        📽 Classic Movies Collection
-      </a>
-    </div>
+      <p>{{ movie.description }}</p>
 
-  </main>
+      <small>
+        {% for f in movie.features %}
+          ✔ {{ f }}
+        {% endfor %}
+      </small>
 
-  <!-- Bottom Navigation -->
-  <footer class="bottom-nav">
-    <a href="/">🏠 Home</a>
-    <a href="/movies">🎬 Movies</a>
-    <a href="/anime">🎌 Anime</a>
-    <a href="/help">❓ Help</a>
-  </footer>
+    </a>
+
+  </div>
+
+  {% endfor %}
+  <!-- LOOP END -->
+
+</main>
 
 </body>
 </html>
