@@ -21,6 +21,10 @@ def search():
 @app.route("/help")
 def help_page():
     return render_template("help.html")
+@app.route("/movies")
+def movies():
+    movie_sites = [w for w in websites if w["category"] == "movies"]
+    return render_template("movies.html", movies=movie_sites)
 
 if __name__ == "__main__":
     app.run(debug=True)
